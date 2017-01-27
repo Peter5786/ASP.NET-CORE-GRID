@@ -1,0 +1,20 @@
+﻿@using NonFactors.Mvc.Grid;
+
+<br />
+
+<input id="grid-search" />
+
+@Html.AjaxGrid(Url.Action("IndexGrid"))
+
+<div id="mvc-grid">
+
+</div>
+
+<script>
+    $(document).on('keyup', '.grid-search', function() {
+        $('.mvc-grid').mvcgrid({
+            query: 'search=' + this.value,
+            reload: true
+        });
+    });
+</script>
